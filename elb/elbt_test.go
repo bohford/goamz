@@ -1,9 +1,9 @@
 package elb_test
 
 import (
-	"github.com/crowdmob/goamz/aws"
-	"github.com/crowdmob/goamz/elb"
-	"github.com/crowdmob/goamz/elb/elbtest"
+	"github.com/bohford/goamz/aws"
+	"github.com/bohford/goamz/elb"
+	"github.com/bohford/goamz/elb/elbtest"
 	"gopkg.in/check.v1"
 )
 
