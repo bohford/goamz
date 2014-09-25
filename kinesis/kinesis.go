@@ -40,7 +40,6 @@ func (k *Kinesis) DescribeStream(name string) (resp *StreamDescription, err erro
 	target := target("DescribeStream")
 	query := NewQueryWithStream(name)
 	body, err := k.query(target, query)
-
 	if err != nil {
 		return nil, err
 	}
@@ -59,6 +58,9 @@ func (k *Kinesis) GetRecords(shardIterator string, limit int) (resp *GetRecordsR
 	query.AddShardIterator(shardIterator)
 
 	body, err := k.query(target, query)
+	if err != nil {
+		return nil, err
+	}
 
 	grr := &GetRecordsResponse{}
 	err = json.Unmarshal(body, grr)
@@ -79,6 +81,9 @@ func (k *Kinesis) GetShardIterator(shardId, streamName string, iteratorType Shar
 	}
 
 	body, err := k.query(target, query)
+	if err != nil {
+		return nil, err
+	}
 
 	gsr := &GetShardIteratorResponse{}
 	err = json.Unmarshal(body, gsr)
@@ -93,9 +98,8 @@ func (k *Kinesis) ListStreams() (resp *ListStreamResponse, err error) {
 	query := NewEmptyQuery()
 	query.AddLimit(10)
 	body, err := k.query(target, query)
-
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
 	lsr := &ListStreamResponse{}
