@@ -330,12 +330,6 @@ func GetAuth(accessKey string, secretKey, token string, expiration time.Time) (a
 		return auth, err
 	}
 
-	// Next try getting auth from the credentials file
-	auth, err = CredentialFileAuth("", "", time.Minute*5)
-	if err == nil {
-		return
-	}
-
 	//err = errors.New("No valid AWS authentication found")
 	err = fmt.Errorf("No valid AWS authentication found: %s", err)
 	return auth, err
