@@ -1,3 +1,10 @@
+# News
+We are putting together plans for future changes. We obviously depend on all of you to take part in the planning for the future of goamz and execution of the plans. Other than the regulare 'issues' and 'pull requests' please also have a look at TODO.md.     
+It is inevitable that there will be backward incompatible changes. Please subscribe to the google group to get all the news (it will only be used for announcements, all the technical discussions will happen on github).     
+Google group: https://groups.google.com/forum/#!forum/goamz-announcements 
+
+
+
 # GoAMZ
 
 [![Build Status](https://travis-ci.org/crowdmob/goamz.png?branch=master)](https://travis-ci.org/crowdmob/goamz)
@@ -20,10 +27,10 @@ github.com/crowdmob/goamz/iam
 github.com/crowdmob/goamz/kinesis
 github.com/crowdmob/goamz/s3
 github.com/crowdmob/goamz/sqs
+github.com/crowdmob/goamz/sns
 
 github.com/crowdmob/goamz/exp/mturk
 github.com/crowdmob/goamz/exp/sdb
-github.com/crowdmob/goamz/exp/sns
 ```
 
 Packages under `exp/` are still in an experimental or unfinished/unpolished state.
